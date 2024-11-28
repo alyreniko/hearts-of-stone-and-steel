@@ -11,6 +11,7 @@ from utils.scene_manager import SceneManager
 from classes.player import Player
 
 from locations.bar import Bar
+from locations.game import Game
 from locations.basement import Basement
 
 
@@ -30,7 +31,7 @@ def main():
     )
     # SceneManager.add_scene("map", Map(screen))
     SceneManager.add_scene("bar", Bar(player, "assets/sprites/bar.png"))
-    SceneManager.add_scene("game", Bar(player, "assets/sprites/game.png"))
+    SceneManager.add_scene("game", Game(player, "assets/sprites/game.png"))
 
     SceneManager.change_scene("main_menu")    # временно пропустил заставку, позже поставить "load_screen"
 

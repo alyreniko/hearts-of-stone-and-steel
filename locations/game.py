@@ -34,7 +34,7 @@ class Game(Scene):
         var.SCREEN.blit(self.player.image, player_rect)
 
     def start_scene(self):
-        self.player.reset_position(1000, 900)
+        self.player.reset_position(700, 900)
 
     def handle_event(self):
         for event in pygame.event.get():

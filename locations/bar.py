@@ -17,6 +17,9 @@ class Bar(Scene):
                          "assets/sprites/door.png", "basement")
 
     def update(self):
+        self.camera.update(self.player.rect)
+
+        player_rect = self.camera.apply(self.player.rect)
         bg_rect = self.background.get_rect()
         bg_rect.center = var.SCREEN.get_rect().center
         bg_rect.bottom = var.SCREEN.get_rect().bottom
@@ -25,10 +28,8 @@ class Bar(Scene):
         self.evidence.update(self.player.rect, var.SCREEN, self.camera)
         self.door.update(self.player.rect, var.SCREEN, self.camera)
 
-        self.camera.update(self.player.rect)
         self.player.update(bg_rect)
 
-        player_rect = self.camera.apply(self.player.rect)
         var.SCREEN.blit(self.player.image, player_rect)
 
     def start_scene(self):
