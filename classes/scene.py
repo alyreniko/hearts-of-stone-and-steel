@@ -2,6 +2,7 @@ import pygame
 import utils.variables as var
 from utils.music_manager import MusicManager
 from utils.camera import Camera
+from utils.control import Control
 from utils.scene_manager import SceneManager
 
 
@@ -21,9 +22,8 @@ class Scene:
         pass
 
     def handle_event(self):
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-                SceneManager.change_scene("main_menu")
+        if Control.check_press(pygame.K_ESCAPE):
+            SceneManager.change_scene("main_menu")
 
     def start_scene(self):
         MusicManager.changeMusic(self.background_music)

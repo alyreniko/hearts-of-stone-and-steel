@@ -6,6 +6,7 @@ from scenes.settings import Settings
 from scenes.main_menu import MainMenu
 from scenes.load_screen import GameIntro
 
+from utils.control import Control
 from utils.scene_manager import SceneManager
 
 from classes.player import Player
@@ -39,8 +40,7 @@ def main():
 
     # Главный цикл
     while True:
-        var.KEYS = pygame.key.get_pressed()
-        # var.EVENTS = pygame.event.get()
+        Control.update_events()
 
         SceneManager.update()
         SceneManager.handle_event()

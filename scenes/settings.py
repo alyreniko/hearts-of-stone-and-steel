@@ -3,6 +3,7 @@ import pygame
 import utils.variables as var
 from classes.button import Button
 from classes.scene import Scene
+from utils.control import Control
 from utils.scene_manager import SceneManager
 
 
@@ -30,12 +31,12 @@ class Settings(Scene):
             button.draw(var.SCREEN)
 
     def handle_event(self):
-        for event in pygame.event.get():
+        for event in Control.events:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 for button in self.buttons:
                     if button.is_hover():
                         button.click()
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+            if Control.check_press(pygame.K_ESCAPE):
                 SceneManager.change_scene("main_menu")
 
     def param(self):

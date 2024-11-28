@@ -1,5 +1,6 @@
 import pygame
 import utils.variables as var
+from utils.control import Control
 from classes.interaction import Interaction
 
 
@@ -15,13 +16,13 @@ class Player:
         self.original_image = self.image
 
     def update(self, bg_rect):
-        if var.KEYS[var.MOVE_LEFT]:
+        if Control.keys[var.MOVE_LEFT]:
             if self.direction != "left":
                 self.direction = "left"
                 self.image = pygame.transform.flip(self.original_image, True, False)
             self.rect.x -= self.speed
 
-        elif var.KEYS[var.MOVE_RIGHT]:
+        elif Control.keys[var.MOVE_RIGHT]:
             if self.direction != "right":
                 self.direction = "right"
                 self.image = pygame.transform.flip(self.original_image, False, False)

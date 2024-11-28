@@ -2,6 +2,7 @@ import pygame
 from classes.button import Button
 from classes.scene import Scene
 import utils.variables as var
+from utils.control import Control
 from utils.scene_manager import SceneManager
 from utils.music_manager import MusicManager
 
@@ -25,7 +26,7 @@ class MainMenu(Scene):
             button.draw(var.SCREEN)
 
     def handle_event(self):
-        for event in pygame.event.get():
+        for event in Control.events:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 for button in self.buttons:
                     if button.is_hover():
