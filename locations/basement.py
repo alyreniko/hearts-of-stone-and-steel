@@ -24,7 +24,6 @@ class Basement(Scene):
         self.last_player_pos = self.player.rect.center
 
         self.player.update(bg_rect)
-        self.camera.update(self.player.rect)
 
 
         self.evidence.update(self.player.rect, var.SCREEN, self.camera)
@@ -33,9 +32,14 @@ class Basement(Scene):
 
         var.SCREEN.blit(self.player.image, self.camera.apply(self.player.rect))
 
+        print(self.player.rect.center)
+        self.camera.update(self.player.rect)
+
+
     def start_scene(self):
-        self.player.reset_position(*self.last_player_pos)
         super().start_scene()
+        # self.update()
+        self.player.reset_position(*self.last_player_pos)
 
     def handle_event(self):
         super().handle_event()
