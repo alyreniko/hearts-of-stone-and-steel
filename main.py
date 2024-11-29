@@ -45,7 +45,7 @@ def main():
         SceneManager.update()
         SceneManager.handle_event()
 
-        for event in var.EVENTS:
+        for event in Control.events:
             if event.type == pygame.QUIT:
                 pygame.quit()
 
