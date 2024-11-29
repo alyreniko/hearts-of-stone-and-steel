@@ -18,6 +18,8 @@ class Game(Scene):
         )
 
     def update(self):
+        var.SCREEN.fill((0, 0, 0))
+        
         self.camera.update(self.player.rect)
 
         player_rect = self.camera.apply(self.player.rect)
