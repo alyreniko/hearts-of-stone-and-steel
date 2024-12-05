@@ -6,7 +6,7 @@ from utils.music_manager import MusicManager
 from classes.evidence import Evidence
 from classes.door import Door
 from utils.dialog import DialogWindow
-from classes.npc import NPC
+from entity.npc_male_police import NPCMalePolice
 
 class Basement(Scene):
     def __init__(self, player, background):
@@ -17,7 +17,7 @@ class Basement(Scene):
         self.background_music = "assets/sound/sound_game.mp3"
         self.last_player_pos = (100, 900)
         self.dialog_window = DialogWindow(var.SCREEN_WIDTH, var.SCREEN_HEIGHT, "file.txt")
-        self.npc = NPC(200, 900, 256, 256, "assets/sprites/player/open_door", 16)
+        self.npc = NPCMalePolice(200, 900, 256, 256, "assets/sprites/player/open_door", 16)
 
     def update(self):
         self.last_player_pos = self.player.rect.center
@@ -38,7 +38,7 @@ class Basement(Scene):
         self.player.update(bg_rect)
         var.SCREEN.blit(self.player.image, player_rect)
 
-        self.dialog_window.update()
+        self.npc.dialog.update()
 
     def start_scene(self):
         super().start_scene()
