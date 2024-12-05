@@ -31,7 +31,7 @@ class NPC():
         self.text = self.font.render('E', True, (0, 0, 255))
         self.frame_count = 0
 
-    def update(self, player, camera):
+    def update(self, player_rect, camera):
         """
         Обновляет анимацию NPC и проверяет взаимодействие с игроком.
 
