@@ -38,8 +38,19 @@ def main():
 
     pygame.mixer.music.set_volume(var.MUSIC_VOLUME)
 
+    count_frame = 0
+    count_time = 0
+    count_time_minute = 0
     # Главный цикл
     while True:
+        if SceneManager._current_scene == var.CURRENT_LOCATION:
+            count_frame += 1
+            count_time = count_frame // var.FPS
+            hours = count_time // 60
+            minutes = count_time % 60
+            formatted_time = f"{str(hours).zfill(2)}:{str(minutes).zfill(2)}"
+            print(f"Пройденное время: {formatted_time}")
+    
         Control.update_events()
 
         SceneManager.update()
@@ -48,6 +59,9 @@ def main():
         for event in Control.events:
             if event.type == pygame.QUIT:
                 pygame.quit()
+
+            if event.type == pygame.USEREVENT + 1:
+                count_time += 1
 
         pygame.display.flip()
         clock.tick(var.FPS)
