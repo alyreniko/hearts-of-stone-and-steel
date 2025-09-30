@@ -5,6 +5,9 @@ _**en** | [ru](README.ru.md)_
 **Hearts of Stone and Steel** is a **detective game demo** developed with **Python** and **Pygame**.
 The project is currently **frozen** and not under active development, but it serves as a showcase of various game mechanics and can be useful as a reference.
 
+> Previously, the project had the code name: **"Охота за эмоциями"** <br>
+> Game Design Document: [GDD.md](GDD.md)
+
 ---
 
 ## 🎮 Features
