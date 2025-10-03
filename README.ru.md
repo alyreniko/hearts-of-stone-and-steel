@@ -10,6 +10,12 @@ _[en](README.md) | **ru**_
 
 ---
 
+## 🖼 Скриншоты
+![image1](https://github.com/user-attachments/assets/d0eb3d82-5c04-49c2-a5a1-46c8f0551056)
+![image2](https://github.com/user-attachments/assets/e315e7ac-6acc-463a-8046-420181480a5d)
+
+---
+
 ## 🎮 Особенности
 
 * Взаимодействие с объектами
